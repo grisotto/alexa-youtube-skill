@@ -46,9 +46,21 @@ let messages = {
     "LOOP_OFF_TRIGGERED": "Non ti ripeterò più la tua selezione su {0}.",
     "REPEAT_TRIGGERED": "Ti suonerò la tua selezione su {0} solo una volta.",
     "HELP_TRIGGERED": "Per usare la skill di YouTube, chiedi alla skill di cercare il video che vuoi. In aggiunta, una volta che il video è in riproduzione, puoi chiedere ad Alexa di metterlo in pausa, riavviarlo, o di metterlo in loop."
-  }
+  },
+  "pt-BR": {
+    "NO_RESULTS_FOUND": "Não encontrei nada no YouTube com a frase {0}.",
+    "ASK_TO_PLAY": "Eu encontrei um vídeo chamado {0}. Tocar ele agora?",
+    "ASK_TO_CONTINUE": "Tô fazendo o download. Quer continuar esperando?",
+    "NOW_PLAYING": "Estou tocando {0}.",
+    "NOTHING_TO_RESUME": "Você não está ouvindo nada.",
+    "NOTHING_TO_REPEAT": "Você não escolheu um vídeo para tocar.",
+    "LOOP_ON_TRIGGERED": "Eu irei repetir a sua seleção {0} para sempre.",
+    "LOOP_OFF_TRIGGERED": "Eu não irei repetir sua seleção {0} para sempre",
+    "REPEAT_TRIGGERED": "Eu irei repetir sua seleção {0} uma vez.",
+    "HELP_TRIGGERED": "Para usar a skill do YouTube, diga para a skill procurar pelo o vídeo que você quer. Além disso, quando o vídeo estiver tocando, você pode dizer para a Alexa pausar, restart ou loop."
+  },
 }
 
-messages['en-GB'] = messages['en-US'];
+messages['pt-BR'] = messages['pt-BR'];
 
 module.exports = messages;

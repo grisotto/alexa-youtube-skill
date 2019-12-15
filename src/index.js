@@ -13,7 +13,7 @@ let response_messages = require("./util/responses.js");
 let app = new alexa.app("youtube");
 
 // Process environment variables 
-const HEROKU = process.env.HEROKU_APP_URL || "https://dmhacker-youtube.herokuapp.com";
+const HEROKU = process.env.HEROKU_APP_URL || "https://grisotto-youtube-api.herokuapp.com";
 const INTERACTIVE_WAIT = !(process.env.DISABLE_INTERACTIVE_WAIT === "true" ||
   process.env.DISABLE_INTERACTIVE_WAIT === true ||
   process.env.DISABLE_INTERACTIVE_WAIT === 1);
@@ -105,8 +105,8 @@ function search_video(req, res, lang) {
     let search_url = `${HEROKU}/alexa/v3/search/${Buffer.from(query).toString("base64")}`;
     if (lang === "de-DE") {
       search_url += "?language=de";
-    } else if (lang === "fr-FR") {
-      search_url += "?language=fr";
+    } else if (lang === "pt-BR") {
+      search_url += "?language=pt";
     } else if (lang === "it-IT") {
       search_url += "?language=it";
     }
@@ -350,6 +350,23 @@ app.error = function(exc, req, res) {
   console.error(exc);
   res.say("An error occured: " + exc);
 };
+
+app.intent("GetVideoPortugueseIntent", {
+    "slots": {
+      "VideoQuery": "VIDEOS"
+    },
+    "utterances": [
+      "busque por {-|VideoQuery}",
+      "encontre {-|VideoQuery}",
+      "toque {-|VideoQuery}",
+      "play {-|VideoQuery}",
+      "tocar {-|VideoQuery}"
+    ]
+  },
+  function(req, res) {
+    return search_video(req, res, "pt-BR");
+  }
+);
 
 app.intent("GetVideoIntent", {
     "slots": {
